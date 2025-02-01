@@ -4,19 +4,30 @@ const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full min-h-screen bg-gray-200 flex flex-col justify-center items-center gap-6">
-      <h1 className="text-4xl font-bold text-gray-800 mb-6">Quick Quiz</h1>
+    <div className="w-full min-h-screen bg-gray-200 flex flex-col justify-center items-center gap-8 p-4">
+      {/* Title */}
+      <h1 className="text-3xl md:text-5xl font-extrabold text-gray-800 mb-4 md:mb-6">
+        🎯 Quick Quiz
+      </h1>
 
-      <button
-        onClick={() => navigate("/quizScreen")}
-        className=" text-black text-lg font-semibold px-8 py-3 rounded-lg transition-transform transform animate-bounce hover:animate-none hover:scale-105 hover:shadow-lg"
-      >
-        Play
-      </button>
+      {/* Buttons Container */}
+      <div className="flex flex-col md:flex-row gap-4 md:gap-8">
+        {/* Play Button */}
+        <button
+          onClick={() => navigate("/quizScreen")}
+          className="w-40 md:w-48 bg-blue-500 text-white text-lg md:text-xl font-semibold px-6 py-3 rounded-lg transition-transform transform animate-bounce hover:animate-none hover:scale-105 hover:shadow-lg"
+        >
+          Play 🚀
+        </button>
 
-      <button className="border-4 text-gray-800 text-lg font-semibold px-7 py-2 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg">
-        Rules
-      </button>
+        {/* Rules Button */}
+        <button
+          onClick={() => navigate("/rules")}
+          className="w-40 md:w-48 border-2 border-gray-700 bg-white text-gray-800 text-lg md:text-xl font-semibold px-6 py-3 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg"
+        >
+          Rules 📜
+        </button>
+      </div>
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Components/Home";
 import QuizScreen from "./Components/QuizScreen";
 import TotalScore from "./Components/ui/TotalScore";
+import Rules from "./Components/ui/Rules";
 // import QuizScreen2 from "./Components/QuizScreen2";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/quizScreen" element={<QuizScreen />} />
         <Route path="/totalScore" element={<TotalScore />} />
+        <Route path="/rules" element={<Rules />} />
         {/* <Route path="/quizScreen2" element={<QuizScreen2 />} /> */}
       </Routes>
     </BrowserRouter>

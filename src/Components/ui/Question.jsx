@@ -10,12 +10,12 @@ const Question = ({
   setSelectedOption,
 }) => {
   return (
-    <div className="w-full max-w-3xl h-[56vh] bg-gray-200 flex flex-col items-center justify-between gap-4 p-4 px-8 rounded-lg shadow-md">
-      <div className="w-full h-[23%] flex flex-row gap-6 p-1 rounded-lg items-center justify-start ">
-        <h2 className="bg-white p-2 px-3 text-2xl rounded-lg flex items-center justify-center">
+    <div className="w-full max-w-3xl h-[75vh] md:h-[58vh] bg-gray-200 flex flex-col items-center justify-between gap-4 p-2 sm:p-4 sm:px-8 rounded-lg shadow-md">
+      <div className="w-full h-[25%] flex flex-col md:flex-row gap-2 md:gap-6 p-1 rounded-lg md:items-center justify-start ">
+        <h2 className="bg-white p-2 px-3 md:text-2xl rounded-lg flex items-center justify-start md:justify-center">
           Q:
         </h2>
-        <h2 className="text-md h-auto font-bold">
+        <h2 className="text-sm md:text-md h-auto font-bold">
           {currentQuestion.description}
         </h2>
       </div>
@@ -64,10 +64,10 @@ const Question = ({
       <div className="w-full flex justify-between items-center">
         <button
           onClick={handlePrevious}
-          className={`border-4 text-gray-800 text-md font-semibold px-7 py-2 rounded-lg transition-transform transform ${
+          className={`border-4  text-gray-800 text-md font-semibold px-7 py-2 rounded-lg transition-transform transform ${
             currentIndex === 0
-              ? "cursor-not-allowed opacity-70"
-              : "hover:scale-105 hover:shadow-lg"
+              ? "cursor-not-allowed opacity-70 bg-gray-100"
+              : "hover:scale-105 hover:shadow-lg bg-white"
           }`}
         >
           Previous
@@ -76,14 +76,14 @@ const Question = ({
         {totalQues === currentIndex + 1 ? (
           <button
             onClick={handleNext}
-            className="border-4 text-gray-800 text-md font-semibold px-7 py-2 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg"
+            className="border-4 bg-white text-gray-800 text-md font-semibold px-7 py-2 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg"
           >
             Show Score
           </button>
         ) : (
           <button
             onClick={handleNext}
-            className="border-4 text-gray-800 text-md font-semibold px-7 py-2 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg"
+            className="border-4 bg-white text-gray-800 text-md font-semibold px-7 py-2 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg"
           >
             Next
           </button>

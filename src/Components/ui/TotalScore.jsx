@@ -2,41 +2,42 @@ import React from "react";
 
 function TotalScore({ score, totalQues, restartQuiz, navigate }) {
   return (
-    <div className="w-full h-full absolute flex items-center justify-center">
-      <div className="w-full max-w-3xl h-[60%] bg-gray-200 flex flex-col justify-between items-center py-4 px-8 rounded-lg text-xl font-semibold">
-        <div className=" w-full flex flex-col items-center">
-          <h1>Total Score</h1>
-          <h1>
+    <div className="w-full h-full min-h-screen flex items-center justify-center p-4">
+      <div className="w-full max-w-3xl bg-gray-200 flex flex-col justify-between items-center py-4 px-4 sm:px-8 lg:h-[50vh] lg:justify-between rounded-lg text-xl font-semibold shadow-md">
+        <div className="w-full flex flex-col items-center">
+          <h2 className="text-4xl sm:text-3xl lg:text-5xl">Total Score</h2>
+          <h2 className="text-4xl sm:text-2xl lg:text-5xl">
             {score} / {totalQues}
-          </h1>
+          </h2>
         </div>
-        <div className="w-full h-full flex flex-col items-center justify-evenly p-4 rounded-lg text-lg">
+        <div className="w-full flex flex-col items-center justify-evenly lg:h-full p-4 rounded-lg text-lg space-y-4">
           {score === totalQues ? (
-            <p className="text-green-700 font-semibold">
+            <p className="text-green-700 font-semibold text-center">
               🎉 Amazing! You got all the answers right!
             </p>
           ) : score >= totalQues / 2 ? (
-            <p className="text-blue-700 font-semibold">
+            <p className="text-blue-700 font-semibold text-center">
               👍 Good job! Keep practicing to improve.
             </p>
           ) : (
-            <p className="text-red-700 font-semibold">
+            <p className="text-red-700 font-semibold text-center">
               😟 Don't worry! Try again and improve your score.
             </p>
           )}
 
-          <div className="w-full flex flex-row items-center justify-evenly">
+          <div className="w-full flex flex-col sm:flex-row items-center justify-evenly space-y-4 sm:space-y-0 sm:space-x-4">
             <button
               onClick={() => navigate("/")}
-              className="border-4 text-gray-800 text-md font-semibold px-6 py-2 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg"
+              className="border-4 bg-white text-gray-800 text-md font-semibold px-6 py-2 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg w-full sm:w-auto"
             >
               Home
             </button>
             <button
               onClick={restartQuiz}
-              className="border-4 text-gray-800 text-md font-semibold px-6 py-2 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg"
+              // className="w-40 md:w-48 bg-blue-500 text-white text-lg md:text-xl font-semibold px-6 py-3 rounded-lg transition-transform transform animate-bounce hover:animate-none hover:scale-105 hover:shadow-lg"
+              className="border-4 bg-blue-500 text-white text-md font-semibold px-6 py-2 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg w-full sm:w-auto"
             >
-              Restart Quiz
+              Restart Quiz 🚀
             </button>
           </div>
         </div>
