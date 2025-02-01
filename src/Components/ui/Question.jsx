@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 
 const Question = ({
   currentQuestion,
@@ -25,8 +25,14 @@ const Question = ({
           currentQuestion.options.map((option, index) => (
             <div
               key={index}
-              onClick={() => setSelectedOption(option)}
-              className="p-2 pl-2 bg-white flex flex-row items-center text-md gap-6 rounded-lg shadow-sm mb-2 cursor-pointer hover:bg-gray-300"
+              onClick={() => {
+                if (!selectedOption) {
+                  setSelectedOption(option);
+                }
+              }}
+              className={`p-2 pl-2 bg-white flex flex-row items-center text-md gap-6 rounded-lg shadow-sm mb-2 cursor-pointer hover:bg-gray-300 ${
+                selectedOption ? "cursor-not-allowed hover:bg-white" : ""
+              }`}
             >
               <span className="h-full px-4 p-2 rounded-lg bg-gray-200">
                 {/* showing A , B, C, D in options. */}

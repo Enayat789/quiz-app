@@ -9,14 +9,18 @@ import Question from "./ui/Question";
 import ScoreSection from "./ui/ScoreSection";
 import { useState } from "react";
 import data from "../data.json";
+import TotalScore from "./ui/TotalScore";
+import { Navigate, useNavigate } from "react-router";
 
 const QuizScreen = () => {
   const questions = data.questions;
+  const navigate = useNavigate();
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentQuestion = questions[currentIndex];
   const [totalQues, setTotalQues] = useState(questions.length);
   const [selectedOption, setSelectedOption] = useState(null);
+  const [quizCompleted, setQuizCompleted] = useState(false);
 
   const [score, setScore] = useState(0);
 
@@ -29,6 +33,8 @@ const QuizScreen = () => {
     if (currentIndex < totalQues - 1) {
       setCurrentIndex((prevIndex) => prevIndex + 1);
       setSelectedOption(null);
+    } else {
+      setQuizCompleted(true);
     }
   };
 
@@ -40,23 +46,42 @@ const QuizScreen = () => {
     }
   };
 
+  const restartQuiz = () => {
+    setCurrentIndex(0);
+    setScore(0);
+    setSelectedOption(null);
+    setQuizCompleted(false);
+  };
+
   return (
     <div className="w-full min-h-screen flex flex-col justify-center items-center ">
-      <ScoreSection
-        totalQues={totalQues}
-        currentIndex={currentIndex}
-        score={score}
-      />
+      {quizCompleted ? (
+        <TotalScore
+          score={score}
+          totalQues={totalQues}
+          restartQuiz={restartQuiz}
+          navigate={navigate}
+        />
+      ) : (
+        <>
+          <ScoreSection
+            totalQues={totalQues}
+            currentIndex={currentIndex}
+            score={score}
+          />
 
-      <Question
-        currentQuestion={currentQuestion}
-        currentIndex={currentIndex}
-        handleNext={handleNext}
-        handlePrevious={handlePrevious}
-        totalQues={totalQues}
-        selectedOption={selectedOption}
-        setSelectedOption={setSelectedOption}
-      />
+          <Question
+            currentQuestion={currentQuestion}
+            currentIndex={currentIndex}
+            handleNext={handleNext}
+            handlePrevious={handlePrevious}
+            totalQues={totalQues}
+            selectedOption={selectedOption}
+            setSelectedOption={setSelectedOption}
+            navigate={navigate}
+          />
+        </>
+      )}
     </div>
   );
 };
