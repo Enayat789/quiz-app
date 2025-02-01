@@ -10,7 +10,8 @@ import ScoreSection from "./ui/ScoreSection";
 import { useState } from "react";
 import data from "../data.json";
 import TotalScore from "./ui/TotalScore";
-import { Navigate, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
+import { useEffect } from "react";
 
 const QuizScreen = () => {
   const questions = data.questions;
@@ -21,8 +22,27 @@ const QuizScreen = () => {
   const [totalQues, setTotalQues] = useState(questions.length);
   const [selectedOption, setSelectedOption] = useState(null);
   const [quizCompleted, setQuizCompleted] = useState(false);
-
   const [score, setScore] = useState(0);
+
+  const [timeLeft, setTimeLeft] = useState(60);
+  const [isTimeUp, setIsTimeUp] = useState(false);
+
+  // updating the progress bar accordingly the no of questions..
+  const progress = ((currentIndex + 1) / totalQues) * 100;
+
+  // handling the timer
+  // const handlingTimer = () => {
+  useEffect(() => {
+    if (timeLeft > 0) {
+      const timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
+      return () => clearTimeout(timer);
+    } else {
+      setIsTimeUp(true);
+      handleNext();
+      // setQuizCompleted();
+    }
+  }, [timeLeft]);
+  // };
 
   // for showing the next questions..
   const handleNext = () => {
@@ -36,6 +56,7 @@ const QuizScreen = () => {
     } else {
       setQuizCompleted(true);
     }
+    setTimeLeft(60);
   };
 
   // for showing the previous questions...
@@ -51,6 +72,7 @@ const QuizScreen = () => {
     setScore(0);
     setSelectedOption(null);
     setQuizCompleted(false);
+    setTimeLeft(60);
   };
 
   return (
@@ -68,6 +90,8 @@ const QuizScreen = () => {
             totalQues={totalQues}
             currentIndex={currentIndex}
             score={score}
+            progress={progress}
+            timeLeft={timeLeft}
           />
 
           <Question

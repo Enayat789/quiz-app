@@ -4,7 +4,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full min-h-screen bg-gray-100 flex flex-col justify-center items-center gap-6">
+    <div className="w-full min-h-screen bg-gray-200 flex flex-col justify-center items-center gap-6">
       <h1 className="text-4xl font-bold text-gray-800 mb-6">Quick Quiz</h1>
 
       <button

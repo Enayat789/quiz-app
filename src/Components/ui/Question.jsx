@@ -30,8 +30,10 @@ const Question = ({
                   setSelectedOption(option);
                 }
               }}
-              className={`p-2 pl-2 bg-white flex flex-row items-center text-md gap-6 rounded-lg shadow-sm mb-2 cursor-pointer hover:bg-gray-300 ${
-                selectedOption ? "cursor-not-allowed hover:bg-white" : ""
+              className={`p-2 pl-2 bg-white flex flex-row items-center text-md gap-6 rounded-lg shadow-sm mb-2 cursor-pointer hover:bg-gray-300 transform transition-transform ease-in-out duration-300 ${
+                selectedOption
+                  ? "cursor-not-allowed hover:bg-white animate-fade-in"
+                  : "hover:scale-104 animate-slide-up"
               }`}
             >
               <span className="h-full px-4 p-2 rounded-lg bg-gray-200">
@@ -41,6 +43,7 @@ const Question = ({
 
               {/* showing the opton */}
               {option.description}
+              {/* <span className="animate-fade-in">{option.description}</span> */}
 
               {/* checking the answer.. */}
               {selectedOption === option && option.is_correct && (
