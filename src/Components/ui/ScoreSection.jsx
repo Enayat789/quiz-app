@@ -6,8 +6,8 @@ const ScoreSection = ({
   timeLeft,
 }) => {
   return (
-    <div className="w-full max-w-3xl bg-gray-200 flex justify-between items-center p-2 px-4 sm:px-6 md:px-8 mb-4 rounded-lg text-lg sm:text-xl font-semibold">
-      <div className="flex flex-col w-[35%] sm:w-[28%] md:w-[25%] items-center justify-center p-1 sm:p-2 gap-1 sm:gap-2">
+    <div className="w-full max-w-3xl flex justify-between items-center bg-gradient-to-r from-gray-100 to-gray-300 border border-gray-200 p-2 px-4 sm:px-6 md:px-8 mb-4 rounded-lg text-lg sm:text-xl font-semibold">
+      <div className="flex flex-col w-[37%] sm:w-[28%] md:w-[26%] items-center justify-center p-1 sm:p-2 gap-1 sm:gap-2">
         <span className="text-sm sm:text-xl">
           Question {currentIndex + 1} of {totalQues}
         </span>

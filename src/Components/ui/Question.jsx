@@ -10,7 +10,7 @@ const Question = ({
   setSelectedOption,
 }) => {
   return (
-    <div className="w-full max-w-3xl h-[72vh] sm:h-[60vh] md:h-[58vh] bg-gray-200 flex flex-col items-center justify-between gap-4 p-2 sm:p-4 sm:px-6 rounded-lg shadow-md">
+    <div className="w-full max-w-3xl h-auto sm:h-[60vh] md:h-[58vh] bg-gradient-to-r from-gray-100 to-gray-300 flex flex-col items-center justify-between gap-4 p-2 sm:p-4 sm:px-6 rounded-lg shadow-md border border-gray-200">
       <div className="w-full h-auto sm:h-[20%] flex md:flex-row gap-2 sm:gap-4 md:gap-6 p-1 rounded-lg items-center sm:items-center md:items-center justify-start ">
         <h2 className="bg-white h-min p-2 px-3 md:text-2xl rounded-lg flex items-center justify-start md:justify-center">
           Q:
@@ -30,10 +30,10 @@ const Question = ({
                   setSelectedOption(option);
                 }
               }}
-              className={`p-2 pl-2 bg-white flex flex-row items-center text-md gap-6 rounded-lg shadow-sm mb-2 cursor-pointer hover:bg-gray-300 transform transition-transform ease-in-out duration-300 ${
+              className={`p-2 pl-2 bg-white flex flex-row items-center text-md gap-6 rounded-lg shadow-sm mb-2 hover:bg-gradient-to-r from-gray-100 to-gray-300 cursor-pointer transform transition-transform ease-in-out duration-300 ${
                 selectedOption
                   ? "cursor-not-allowed hover:bg-white animate-fade-in"
-                  : "hover:scale-104 animate-slide-up"
+                  : "hover:scale-104 animate-slide-up "
               }`}
             >
               <span className="h-full px-4 p-2 rounded-lg bg-gray-200">
