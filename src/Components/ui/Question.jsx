@@ -10,9 +10,9 @@ const Question = ({
   setSelectedOption,
 }) => {
   return (
-    <div className="w-full max-w-3xl h-[75vh] md:h-[58vh] bg-gray-200 flex flex-col items-center justify-between gap-4 p-2 sm:p-4 sm:px-8 rounded-lg shadow-md">
-      <div className="w-full h-[25%] flex flex-col md:flex-row gap-2 md:gap-6 p-1 rounded-lg md:items-center justify-start ">
-        <h2 className="bg-white p-2 px-3 md:text-2xl rounded-lg flex items-center justify-start md:justify-center">
+    <div className="w-full max-w-3xl h-[72vh] sm:h-[60vh] md:h-[58vh] bg-gray-200 flex flex-col items-center justify-between gap-4 p-2 sm:p-4 sm:px-6 rounded-lg shadow-md">
+      <div className="w-full h-auto sm:h-[20%] flex md:flex-row gap-2 sm:gap-4 md:gap-6 p-1 rounded-lg items-center sm:items-center md:items-center justify-start ">
+        <h2 className="bg-white h-min p-2 px-3 md:text-2xl rounded-lg flex items-center justify-start md:justify-center">
           Q:
         </h2>
         <h2 className="text-sm md:text-md h-auto font-bold">
