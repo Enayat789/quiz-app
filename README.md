@@ -1,8 +1,32 @@
-# React + Vite
+Quiz App 🎯
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web-based quiz application with gamification features built using React and Vite.
 
-Currently, two official plugins are available:
+🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Fetches quiz data from a JSON file due to CORS policy.
+
+Multiple-choice questions with interactive UI
+
+Displays results with scores and analysis
+
+Gamification elements for enhanced user engagement
+
+Responsive and intuitive design
+
+🛠 Tech Stack
+
+Frontend: React.js, Tailwind CSS
+
+State Management: useState, useEffect
+
+Build Tool: Vite
+
+### 📸 Screenshots
+
+![Quiz App UI](./screenshots/quiz-ui.png)
+![Quiz Rules UI](./screenshots/quiz-rules.png)
+![Quiz Questions UI](./screenshots/quiz-questionUi.png)
+![Quiz Score UI](./screenshots/total-score.png)
+
+Made with ❤️ by Enayat
