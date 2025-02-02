@@ -10,7 +10,7 @@ const Home = () => {
       {/* Title */}
       <h1 className="text-3xl md:text-5xl flex justify-center items-center gap-2 font-extrabold text-gray-800 mb-4 md:mb-6">
         <img src={bullysEye} alt="bullysEye img" className="w-14" />
-        <span> Quick Quiz</span>
+        <span> Quick Quiz 2</span>
       </h1>
 
       {/* Buttons Container */}
