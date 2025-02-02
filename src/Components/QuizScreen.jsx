@@ -30,8 +30,6 @@ const QuizScreen = () => {
   // updating the progress bar accordingly the no of questions..
   const progress = ((currentIndex + 1) / totalQues) * 100;
 
-  // handling the timer
-  // const handlingTimer = () => {
   useEffect(() => {
     if (timeLeft > 0) {
       const timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
@@ -39,10 +37,8 @@ const QuizScreen = () => {
     } else {
       setIsTimeUp(true);
       handleNext();
-      // setQuizCompleted();
     }
   }, [timeLeft]);
-  // };
 
   // for showing the next questions..
   const handleNext = () => {

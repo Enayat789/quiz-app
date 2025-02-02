@@ -34,7 +34,6 @@ function TotalScore({ score, totalQues, restartQuiz, navigate }) {
             </button>
             <button
               onClick={restartQuiz}
-              // className="w-40 md:w-48 bg-blue-500 text-white text-lg md:text-xl font-semibold px-6 py-3 rounded-lg transition-transform transform animate-bounce hover:animate-none hover:scale-105 hover:shadow-lg"
               className="border-4 bg-blue-500 text-white text-md font-semibold px-6 py-2 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg w-full sm:w-auto"
             >
               Restart Quiz 🚀

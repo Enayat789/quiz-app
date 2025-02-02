@@ -1,5 +1,3 @@
-// import { useState } from "react";
-
 const Question = ({
   currentQuestion,
   currentIndex,
@@ -43,7 +41,6 @@ const Question = ({
 
               {/* showing the opton */}
               {option.description}
-              {/* <span className="animate-fade-in">{option.description}</span> */}
 
               {/* checking the answer.. */}
               {selectedOption === option && option.is_correct && (
